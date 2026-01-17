@@ -1,9 +1,5 @@
 services:
   - type: web
-    name: phishing-url-detector
-    runtime: python
-    buildCommand: pip install -r requirements.txt && python train_model.py
+    env: python
+    buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.12.10
